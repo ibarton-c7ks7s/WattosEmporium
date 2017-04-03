@@ -1,11 +1,33 @@
 import React from 'react';
 
-export default class ShipListingPage extends React.Component {
+//API Service
+import ShipService from '../../Service/ships.js';
+
+class ShipListingPage extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			 ship: []
+		};
+	}
+
+	componentDidMount() {
+		var self = this
+		ShipService.get(self.props.match.params.shipSlug).then((response) => {
+			let ship = response.data.products.filter((ship, key) => {
+				return ship.slug == self.props.match.params.shipSlug
+			})
+			self.setState({ ship: ship.shift() })
+		})
+	}
+
 	render() {
 		return (
-			<div style={{textAlign: 'center'}}>
-				<h1>Ships!</h1>
+			<div>
+				<h1>{this.state.ship.name}</h1>
 			</div>
 		);
 	}
 }
+
+export default ShipListingPage

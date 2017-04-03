@@ -1,18 +1,26 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+import { HashRouter, Route, Link } from 'react-router-dom';
 
+//Components
 import Layout from './Components/Layout.jsx';
 import ShipListingPage from './Components/Views/ShipListingPage.jsx';
 import ShipViewPage from './Components/Views/ShipViewPage.jsx';
 
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+class App extends React.Component {
+	render() {
+		return (
+			<HashRouter>
+				<Layout>
+					<Route exact path="/" component={ShipListingPage}/>
+					<Route path="/ship/:shipSlug" component={ShipViewPage}/>
+				</Layout>
+			</HashRouter>
+		)
+	}
+}
 
-render(
-	<BrowserRouter>
-		<Layout>
-			<Route exact path="/" component={ShipListingPage}/>
-			<Route path="/ship" component={ShipViewPage}/>
-		</Layout>
-	</BrowserRouter>,
+ReactDOM.render(
+	<App></App>,
 	document.getElementById('app')
-);
+)

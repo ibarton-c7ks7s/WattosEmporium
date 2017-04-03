@@ -8,13 +8,16 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "axios": "^0.16.0",
     "html-webpack-plugin": "^2.28.0",
+    "lodash": "^4.17.4",
     "path": "^0.12.7",
     "react": "^15.4.2",
     "react-dev-tools": "^0.0.1",
     "react-dom": "^15.4.2",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
+    "unique-id-generator": "^1.0.1",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
   },

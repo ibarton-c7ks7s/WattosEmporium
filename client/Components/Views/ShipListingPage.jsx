@@ -1,13 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class ShipListingPage extends React.Component {
+//Service
+import ShipService from '../../Service/ships.js';
+
+class ShipListingPage extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			 ships: []
+		};
+	}
+
+	componentDidMount() {
+		var self = this
+		ShipService.get().then((response) => {
+			if(response) {
+				self.setState({ ships: response.data.products })
+			}
+		})
+	}
+
 	render() {
+		if (!this.state.ships.length) {
+			return null;
+		}
+
 		return (
-			<div style={{textAlign: 'center'}}>
+			<div>
 				<h1>Ships!</h1>
-				<Link to="/ship">ok go to ship</Link>
+				{this.state.ships.map((ship) => {
+					return <div key={ship.slug}>
+						<Link to={"/ship/" + ship.slug}>{ship.name}</Link>
+					</div>
+				})}
 			</div>
 		);
 	}
 }
+
+export default ShipListingPage;
