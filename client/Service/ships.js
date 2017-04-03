@@ -1,5 +1,5 @@
 import axios from 'axios'
-import slugify from '../Util/Slugify.js'
+import { slugify } from '../Util/Slugify.js'
 
 const ShipService = {
 	cachePromise : null,
