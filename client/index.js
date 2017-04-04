@@ -7,6 +7,9 @@ import Layout from './Components/Layout.jsx';
 import ShipListingPage from './Components/Views/ShipListingPage.jsx';
 import ShipViewPage from './Components/Views/ShipViewPage.jsx';
 
+//Styles
+import './Sass/main.scss';
+
 class App extends React.Component {
 	render() {
 		return (
