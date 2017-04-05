@@ -1,0 +1,58 @@
+//reset
+@import "~normalize-css/normalize.css";
+
+//grid
+@import "~flexboxgrid-sass/flexboxgrid.scss";
+
+//animations
+@import "~animate.css/animate.min.css";
+
+/**
+* MAIN
+*/
+
+$yellow: #ccb361;
+$blue: #50b5ed;
+
+html {
+	font-size: 16px;
+}
+
+body {
+	background: #020202;
+	color: #fff;
+}
+
+a,
+a:link,
+a:visited {
+	color: $yellow;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/**
+* HEADER
+*/
+.site-header {
+	background: rgba($yellow, .5);
+    border-bottom: 1px solid $yellow;
+
+    &--title {
+    	text-indent: -9999px;
+    	background: url('../assets/images/logo.png') center center no-repeat;
+    	height: 75px;
+    	background-size: contain;
+    }
+}
+
+
+/**
+* SHIP PREVIEW
+*/
+.ship-preview {
+	max-width: 100%;
+}
