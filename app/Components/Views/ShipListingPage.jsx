@@ -4,7 +4,24 @@ import { Link } from 'react-router-dom';
 //Service
 import ShipService from '../../Service/ships.js';
 
-// @todo need to copy assets over to dist
+// @todo need to copy assets over to dist?
+// @todo break the preview into it's own component
+
+function Price(props) {
+	return <p className="ship-preview--price">{props.price}</p>
+}
+
+function NoPrice() {
+	return <p className="ship-preview--no-price">Call for price</p>
+}
+
+function PriceCallout (props) {
+	if (props.price) {
+		return <Price price={props.price} />
+	} else {
+		return <NoPrice />
+	}
+}
 
 class ShipListingPage extends React.Component {
 	constructor(props) {
@@ -37,14 +54,15 @@ class ShipListingPage extends React.Component {
 					{
 						this.state.ships.map((ship) => {
 						let shipUrl = "/ship/" + ship.slug;
-						return <div className="col-xs-12 col-sm-6 col-md-4" key={ship.slug}>
+						return <div className="col-xs-12 col-sm-6 col-md-4 ship-preview animated fadeIn" key={ship.slug}>
 							<Link to={shipUrl}>
-								<img className="ship-preview" src={"../../app/assets/images/" + ship.slug + "_thumb.jpg"} alt={ship.slug} />
+								<img className="ship-preview--img" src={"../../app/assets/images/" + ship.slug + "_thumb.jpg"} alt={ship.slug} />
 							</Link>
-							<Link to={shipUrl}>
+							<Link className="ship-preview--name" to={shipUrl}>
 								{ship.name}
 							</Link>
-							<p>{ship.manufacturer}</p>
+							<p className="ship-preview--manufacturer">{ship.manufacturer}</p>
+							<PriceCallout price={ship.price}/>
 						</div>
 					})}
 				</div>

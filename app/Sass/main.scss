@@ -13,9 +13,12 @@
 
 $yellow: #ccb361;
 $blue: #50b5ed;
+$dark-blue: #2a5871;
+$light-blue: #87c4e5;
 
 html {
 	font-size: 16px;
+	height: 100%;
 }
 
 body {
@@ -23,15 +26,19 @@ body {
 	color: #fff;
 }
 
-a,
-a:link,
-a:visited {
+a {
 	color: $yellow;
 	text-decoration: none;
+    outline: none;
+
+    &:hover {
+		text-decoration: underline;
+	}
 }
 
-a:hover {
-	text-decoration: underline;
+.content {
+	margin-bottom: 2em;
+	min-height: 100vh;
 }
 
 /**
@@ -39,7 +46,7 @@ a:hover {
 */
 .site-header {
 	background: rgba($yellow, .5);
-    border-bottom: 1px solid $yellow;
+    border-bottom: 2px solid $yellow;
 
     &--title {
     	text-indent: -9999px;
@@ -49,10 +56,60 @@ a:hover {
     }
 }
 
+/**
+* FOOTER
+*/
+.site-footer {
+	background: rgba($yellow, .5);
+    border-top: 2px solid $yellow;
+    padding: 1em 0 .5em;
+
+    .copyright {
+    	text-align: center;
+    	font-size: .8em;
+    }
+}
+
 
 /**
 * SHIP PREVIEW
 */
 .ship-preview {
-	max-width: 100%;
+	&>* {
+		display: inline-block;
+		margin: 0;
+	}
+
+	&--img {
+		max-width: 100%;
+		opacity: .8;
+		transition: opacity .2s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&--name {
+		font-size: 1.1em;
+		margin-bottom: .25em;
+	}
+
+	&--manufacturer {
+		display: block;
+		font-size: .8em;
+		margin-bottom: .5em;
+	}
+
+	&--price {
+		color: $blue;
+		margin-bottom: .25em;
+	}
+
+	&--no-price {
+		color: $light-blue;
+	    background: $dark-blue;
+	    padding: .25em;
+	    margin-bottom: .25em;
+	}
 }

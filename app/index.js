@@ -10,6 +10,8 @@ import ShipViewPage from './Components/Views/ShipViewPage.jsx';
 //Styles
 import './Sass/main.scss';
 
+// @todo include font-awesome icons
+
 class App extends React.Component {
 	render() {
 		return (
