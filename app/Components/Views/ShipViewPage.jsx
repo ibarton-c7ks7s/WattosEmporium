@@ -38,7 +38,7 @@ function SpecsTable(props) {
 
 	let specKeys = Object.keys(props.data.techspecs)
 	return (
-		<table className="table">
+		<table className="spec-table">
 			<tbody>
 				<tr>
 					<th>class</th>
@@ -88,17 +88,24 @@ class ShipListingPage extends React.Component {
 
 		return (
 			<section className="container-fluid">
-				<header>
-					&lt;&nbsp;<Link className="breadcrumb" to="/">Back to listings</Link> 
-					<h2>{this.state.ship.name}</h2>
-					<p>{this.state.ship.manufacturer}</p>
-				</header>
+				<div className="row">&lt;&nbsp;<Link className="breadcrumb" to="/">Back to listings</Link></div>
 				<section className="row">
 					<div className="col-xs-12 col-sm-7">
+						<header>
+							<h2>{this.state.ship.name}</h2>
+							<p>{this.state.ship.manufacturer}</p>
+						</header>
 						<ModelEmbed media={media}/>
+						<div className="ship-description">{media.description}</div>
 					</div>
 					<div className="col-xs-12 col-sm-5">
+						<div><Link to={media.schematic}></Link></div>
 						<SpecsTable data={this.state.ship} />
+
+						<div className="purchase">
+							<p>{this.state.ship.price}</p>
+							<a className="button" href="#">Buy</a> 
+						</div>
 					</div>
 				</section>
 			</section>

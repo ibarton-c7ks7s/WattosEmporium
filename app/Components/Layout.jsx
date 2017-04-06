@@ -20,11 +20,11 @@ class Layout extends React.Component {
 					</div>
 				</div>
 				<footer className="site-footer">
-					<div className="message-from-watto">
-						{
-							//image of watto
-						}
-						<p>"You not find a better deal, I think. Eh?"</p>
+					<div className="watto row center-xs">
+						<div className="watto--profile">
+							<img src="../../app/assets/images/watto.jpg" />
+						</div>
+						<p className="watto--quote">"You not find a better deal, I think. Eh?"</p>
 					</div>
 					<p className="copyright">© Watto’s Emporium</p>
 				</footer>

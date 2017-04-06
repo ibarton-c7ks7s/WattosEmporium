@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ShipService from '../../Service/ships.js';
 
 // @todo need to copy assets over to dist
+// @todo need pricecallout as it's own component
 
 /**
 * Ship Price Element

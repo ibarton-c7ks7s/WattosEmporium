@@ -14,11 +14,14 @@
 
 $yellow: #ccb361;
 $tan: #bbae95;
-$dark-tan: #baad94;
+$dark-tan: #b09a72;
 $blue: #50b5ed;
 $dark-blue: #2a5871;
 $mid-blue: #40728e;
 $light-blue: #87c4e5;
+$dark-green: #147460;
+$green: #26b497;
+$light-green: #42e29a;
 
 html {
 	font-size: 16px;
@@ -41,9 +44,31 @@ a {
 	}
 }
 
+p {
+	margin: 0;
+}
+
 .content {
 	margin-bottom: 2em;
 	min-height: 100vh;
+}
+
+/**
+* BUTTONS
+*/
+.button {
+	background: $green;
+	display: inline-block;
+	padding: 1em;
+	color: $dark-green;
+	text-transform: uppercase;
+	border-radius: 4px;
+	transition: background .2s;
+
+	&:hover {
+		text-decoration: none;
+		background: $light-green;
+	}
 }
 
 /**
@@ -72,6 +97,19 @@ a {
     .copyright {
     	text-align: center;
     	font-size: .8em;
+    }
+
+    .watto {
+
+    	&--profile {
+    		border-radius: 50%;
+		    overflow: hidden;
+		    width: 140px;
+    	}
+
+		&--quote {
+
+		}
     }
 }
 
@@ -123,6 +161,22 @@ a {
 /**
 * Ship Detail
 */
+.spec-table {
+	@extend %table;
+
+	td,
+	th {
+		border-color: $tan;
+	}
+
+	tr {
+		background: rgba($tan, .3);
+
+		&:nth-child(2n+1) {
+			background: rgba($tan, .4);
+		}
+	}
+}
 
 .sketchfab-embed-wrapper {
 	position: relative;
