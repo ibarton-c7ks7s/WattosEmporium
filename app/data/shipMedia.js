@@ -20,17 +20,17 @@ export const shipMedia = {
 		description: "The Corellian YT-1300 was utilized as a freighter and transport, and some saw service as intermodal tugs in orbital freight yards. The vessel's side-mounted cockpit and front-facing prongs allowed it to push containers, although the design was modular enough to allow enterprising captains to modify their ships. Standard YT-1300s possessed powerful engines and stock hyperdrives."
 	},
 	'alpha-class-xg-1-star-wing' : {
-		embed: '',
-		schematic: '',
+		embed: null,
+		schematic: null,
 		description: "The Cygnus Spaceworks Alpha-class Xg-1 Star Wing, also known as the Xg-1 Starwing and commonly referred to as the Assault Gunboat,[8] was one of the Galactic Empire's first general-deployment starfighters to be equipped with deflector shields and a hyperdrive."
 	},
 	'lambda-class-t-4a-shuttle' : {
-		embed: 'https://sketchfab.com/models/87dd717e1683413ba428f7b980d1b86d',
+		embed: 'https://sketchfab.com/models/87dd717e1683413ba428f7b980d1b86d/embed',
 		schematic: 'https://s-media-cache-ak0.pinimg.com/564x/89/9b/e6/899be6c25c1976856e9f2bf1b1bf14ae.jpg',
 		description: "The Lambda-class T-4a shuttle was designed by former Cygnus Spaceworks employees who were lured away by Sienar Fleet Systems, which promised them high salaries, a portion of future profits, and even personal star yachts. Although these shuttles were primarily manufactured by Sienar, Cygnus was subcontracted to build a more heavily armed military version. The T-4a was the immediate successor of the Theta-class T-2c shuttle, and was first introduced in 19 BBY at some point after the Imperial subjugation of Kashyyyk."
 	},
 	'rz-1-a-wing-interceptor' : {
-		embed: '',
+		embed: null,
 		schematic: 'https://vignette1.wikia.nocookie.net/starwars/images/4/4d/Awing_egvv.jpg/revision/latest?cb=20080929233021',
 		description: "The RZ-1 A-wing interceptor was a wedge-shaped starfighter manufactured by Kuat Systems Engineering, which took design inspiration from the Republic starfighters of the Clone Wars. They were used by the early rebellion against the Galactic Empire and the subsequent Rebel Alliance, seeing action during the Age of the Empire and the Galactic Civil War. It was still in use thirty years later during the conflict between the Resistance and the First Order."
 	},

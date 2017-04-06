@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 //Service
 import ShipService from '../../Service/ships.js';
 
-// @todo need to copy assets over to dist?
-// @todo break the preview into it's own component
+// @todo need to copy assets over to dist
 
 /**
 * Ship Price Element
 *
 * @param {Object} props
-* @return {DOM}
+* @return {JSX}
 */
 function Price(props) {
 	return <p className="ship-preview--price">{props.price}</p>
@@ -20,7 +19,7 @@ function Price(props) {
 /**
 * Ship Price Element if No Price
 *
-* @return {DOM}
+* @return {JSX}
 */
 function NoPrice() {
 	return <p className="ship-preview--no-price">Contact for price</p>
@@ -30,7 +29,7 @@ function NoPrice() {
 * Ship Price Handler
 *
 * @param {Object} props
-* @return {DOM}
+* @return {JSX}
 */
 function PriceCallout (props) {
 	if (props.price) {
@@ -63,7 +62,7 @@ class ShipListingPage extends React.Component {
 		}
 
 		return (
-			<div>
+			<div className="container-fluid">
 				<div className="row">
 					<h2>Listings</h2>
 				</div>

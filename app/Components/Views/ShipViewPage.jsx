@@ -1,12 +1,62 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 //API Service
 import ShipService from '../../Service/ships.js';
 
+/**
+* Embeds 3d model with fallback to image
+*
+* @param {Object} props
+* @return {JSX}
+*/
 function ModelEmbed(props) {
-	return (<div className="sketchfab-embed-wrapper">
-		<iframe width="640" height="480" src={props.media.embed} frameBorder="0"></iframe>
-	</div>)
+	if (!props.media.embed) {
+		return (
+			<div><img src={props.media.image}/></div>
+		)
+	} else {
+		return (
+			<div className="sketchfab-embed-wrapper">
+				<iframe width="640" height="480" src={props.media.embed} frameBorder="0"></iframe>
+			</div>
+		)
+	}	
+}
+
+/**
+* Tech Specs Table
+*
+* @param {Object} props
+* @return {JSX}
+*/
+function SpecsTable(props) {
+	const humanizedSpecNames = {
+		'maxaccel' : 'max acceleration',
+		'maxatmosphericspeed' : 'max speed'
+	}
+
+	let specKeys = Object.keys(props.data.techspecs)
+	return (
+		<table className="table">
+			<tbody>
+				<tr>
+					<th>class</th>
+					<td>{props.data.class}</td>
+				</tr>
+			{
+				specKeys.map(keyName => {
+					return (
+						<tr key={keyName}>
+							<th>{humanizedSpecNames[keyName] ? humanizedSpecNames[keyName] : keyName}</th>
+							<td>{props.data.techspecs[keyName]}</td>
+						</tr>
+					)
+				})
+			}
+			</tbody>
+		</table>
+	)
 }
 
 class ShipListingPage extends React.Component {
@@ -29,15 +79,29 @@ class ShipListingPage extends React.Component {
 	}
 
 	render() {
-		if(!this.state.ship) {
+		if (!this.state.ship) {
 			return null;
 		}
 
+		let media = this.state.ship.media
+		media.image =  "../../app/assets/images/" + this.state.ship.slug + ".jpg"
+
 		return (
-			<div>
-				<h1>{this.state.ship.name}</h1>
-				<ModelEmbed media={this.state.ship.media}/>
-			</div>
+			<section className="container-fluid">
+				<header>
+					&lt;&nbsp;<Link className="breadcrumb" to="/">Back to listings</Link> 
+					<h2>{this.state.ship.name}</h2>
+					<p>{this.state.ship.manufacturer}</p>
+				</header>
+				<section className="row">
+					<div className="col-xs-12 col-sm-7">
+						<ModelEmbed media={media}/>
+					</div>
+					<div className="col-xs-12 col-sm-5">
+						<SpecsTable data={this.state.ship} />
+					</div>
+				</section>
+			</section>
 		);
 	}
 }
