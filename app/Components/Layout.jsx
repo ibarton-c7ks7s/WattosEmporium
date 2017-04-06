@@ -9,7 +9,6 @@ class Layout extends React.Component {
 						<div className="row center-xs">
 							<div className="col-xs">
 								<h1 className="site-header--title">Watto’s Space Emporium</h1>
-								<p className="site-header--subtitle">These <em>are</em> the ships you’re looking for</p>
 							</div>
 						</div>
 					</div>

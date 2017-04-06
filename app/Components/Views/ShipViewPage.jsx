@@ -99,7 +99,7 @@ class ShipListingPage extends React.Component {
 						<div className="ship-description">{media.description}</div>
 					</div>
 					<div className="col-xs-12 col-sm-5">
-						<div><Link to={media.schematic}></Link></div>
+						<div><a href={media.schematic} target="_blank">Ship Schematics</a></div>
 						<SpecsTable data={this.state.ship} />
 
 						<div className="purchase">

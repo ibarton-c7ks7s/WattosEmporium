@@ -1,6 +1,9 @@
 //reset
 @import "~normalize-css/normalize.css";
 
+//fonts
+@import '_fonts.scss';
+
 //grid
 @import "~flexboxgrid-sass/flexboxgrid.scss";
 
@@ -23,6 +26,10 @@ $dark-green: #147460;
 $green: #26b497;
 $light-green: #42e29a;
 
+* {
+   transform: translateZ(0);
+}
+
 html {
 	font-size: 16px;
 	height: 100%;
@@ -30,8 +37,13 @@ html {
 
 body {
 	background: #020202;
+	color: #8f8f8f;
+	@include n-sans;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	@include j-slab-bold;
 	color: #fff;
-	font-family: "Lucida Sans", sans-serif;
 }
 
 a {
@@ -51,6 +63,14 @@ p {
 .content {
 	margin-bottom: 2em;
 	min-height: 100vh;
+}
+
+.heading {
+	margin-bottom: 2em;
+
+	&--title {
+		margin-bottom: .5em;
+	}
 }
 
 /**
@@ -77,6 +97,7 @@ p {
 .site-header {
 	background: rgba($yellow, .5);
     border-bottom: 2px solid $yellow;
+    padding: 1em;
 
     &--title {
     	text-indent: -9999px;
@@ -125,17 +146,17 @@ p {
 
 	&--img {
 		max-width: 100%;
-		opacity: .8;
-		transition: opacity .2s;
+		transition: transform .2s;
 
 		&:hover {
-			opacity: 1;
+			transform: rotate(-3deg);
 		}
 	}
 
 	&--name {
 		font-size: 1.1em;
 		margin-bottom: .25em;
+		@include j-slab;
 	}
 
 	&--manufacturer {

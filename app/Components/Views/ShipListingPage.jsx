@@ -63,15 +63,16 @@ class ShipListingPage extends React.Component {
 		}
 
 		return (
-			<div className="container-fluid">
-				<div className="row">
-					<h2>Listings</h2>
+			<div className="container-fluid animated fadeIn">
+				<div className="heading">
+					<h2 className="heading--title">Listings</h2>
+					<p  className="heading--subtitle">These <strong>are</strong> the ships you’re looking for.</p>
 				</div>
 				<div className="row">
 					{
 						this.state.ships.map((ship) => {
 						let shipUrl = "/ship/" + ship.slug;
-						return <div className="col-xs-12 col-sm-6 col-md-4 ship-preview animated fadeIn" key={ship.slug}>
+						return <div className="col-xs-12 col-sm-6 col-md-4 ship-preview" key={ship.slug}>
 							<Link to={shipUrl}>
 								<img className="ship-preview--img" src={"../../app/assets/images/" + ship.slug + "_thumb.jpg"} alt={ship.slug} />
 							</Link>

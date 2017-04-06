@@ -12,6 +12,7 @@ import './Sass/main.scss';
 
 // @todo include font-awesome icons
 // @todo should extract css
+// @todo get autoprefixer
 
 class App extends React.Component {
 	render() {

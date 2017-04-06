@@ -21,6 +21,12 @@ module.exports = {
 			test: /\.(jpg|jpeg|png|gif)$/,
 			loader: 'file-loader?name=images/[name].[ext]'
         },{
+        	test: /\.(woff|woff2)$/,
+        	loader: 'url-loader',
+        	options: {
+        		name: './fonts/[name].[ext]'
+        	}
+        },{
             test: /\.scss$/,
             use: [{
                 loader: "style-loader" // creates style nodes from JS strings
