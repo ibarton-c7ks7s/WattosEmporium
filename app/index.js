@@ -11,6 +11,7 @@ import ShipViewPage from './Components/Views/ShipViewPage.jsx';
 import './Sass/main.scss';
 
 // @todo include font-awesome icons
+// @todo should extract css
 
 class App extends React.Component {
 	render() {

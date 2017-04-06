@@ -14,6 +14,7 @@
 $yellow: #ccb361;
 $blue: #50b5ed;
 $dark-blue: #2a5871;
+$mid-blue: #40728e;
 $light-blue: #87c4e5;
 
 html {
@@ -24,6 +25,7 @@ html {
 body {
 	background: #020202;
 	color: #fff;
+	font-family: "Lucida Sans", sans-serif;
 }
 
 a {
@@ -99,6 +101,7 @@ a {
 		display: block;
 		font-size: .8em;
 		margin-bottom: .5em;
+		color: $mid-blue;
 	}
 
 	&--price {

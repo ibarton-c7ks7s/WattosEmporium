@@ -7,14 +7,31 @@ import ShipService from '../../Service/ships.js';
 // @todo need to copy assets over to dist?
 // @todo break the preview into it's own component
 
+/**
+* Ship Price Element
+*
+* @param {Object} props
+* @return {DOM}
+*/
 function Price(props) {
 	return <p className="ship-preview--price">{props.price}</p>
 }
 
+/**
+* Ship Price Element if No Price
+*
+* @return {DOM}
+*/
 function NoPrice() {
-	return <p className="ship-preview--no-price">Call for price</p>
+	return <p className="ship-preview--no-price">Contact for price</p>
 }
 
+/**
+* Ship Price Handler
+*
+* @param {Object} props
+* @return {DOM}
+*/
 function PriceCallout (props) {
 	if (props.price) {
 		return <Price price={props.price} />
