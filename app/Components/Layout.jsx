@@ -23,9 +23,11 @@ class Layout extends React.Component {
 						<div className="watto--profile">
 							<img src="../../app/assets/images/watto.jpg" />
 						</div>
-						<p className="watto--quote">"You not find a better deal, I think. Eh?"</p>
+						<div className="watto--quote-wrap">
+							<blockquote>"You not find a better deal, I think. Eh?"</blockquote>
+						</div>
 					</div>
-					<p className="copyright">© Watto’s Emporium</p>
+					<p className="copyright">Produced by <a href="https://www.linkedin.com/in/kyberry/">Kyler Berry</a></p>
 				</footer>
 			</div>
 		)

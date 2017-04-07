@@ -6,12 +6,12 @@ export const shipMedia = {
 	},
 	't-65-x-wing-starfighter' : {
 		embed: 'https://sketchfab.com/models/904d33164813421e922f6cd9b90db0d7/embed',
-		schematic: 'https://www.the-blueprints.com/blueprints-depot/sciencefiction/star-wars-rebel/x-wing.gif',
+		schematic: 'https://www.the-blueprints.com/blueprints-depot/sciencefiction/star-wars-rebel/x-wing.GIF',
 		description: "The X-wing is descended from Incom Corporation's Clone Wars-era starfighters, namely the Aggressive ReConnaissance-170 starfighter, Clone Z-95 starfighter, and Z-95 Headhunter. Incom's engineers strove to build a well-rounded, hyperdrive-equipped snubfighter with no exploitable weakness. The new starfighter was intended to become the backbone of the Imperial Navy, but political forces led to the Galactic Empire deciding to rely on Sienar Fleet Systems' more affordable but less capable TIE line. The Alliance to Restore the Republic then adopted the design as its own."
 	},
 	'y-wing-starfighter' : {
 		embed: 'https://sketchfab.com/models/81ff7bf0ac9b42558539903a371ab74b/embed',
-		schematic: 'http://vignette1.wikia.nocookie.net/starwars/images/0/0f/Ywing_egvv.jpg/revision/latest?cb=20081117222123',
+		schematic: 'https://s-media-cache-ak0.pinimg.com/564x/de/06/5b/de065bf8678b65628077665061cf0998.jpg',
 		description: "Produced by Koensayr Manufacturing, these fighters were a mainstay in the Republic Navy during the Clone Wars, becoming an instrumental bomber in the fight against the Confederacy of Independent Systems. Y-wings were notably used by Shadow Squadron during the attack on the Separatist heavy cruiser Malevolence. During the Battle of Ryloth, a squadron of Y-wings were used to break the blockade over Ryloth. As noted by AP-5, a Republic analyst droid who helped coordinate the campaign, Y-wings tended to be a bit 'buggy' during atmospheric operations; Clone Captain CT-7567, however, knew the Y-wings to be solid in combat. The light bombers was used to drop an experimental electro-proton bomb on Separatist forces near the end of the Battle of Malastare, completely annihilating the droid army, as well as the being used to bombard entrenched Confederate gunners during the Second Battle of Geonosis."
 	},
 	'yt-1300-light-freighter' : {
@@ -31,7 +31,7 @@ export const shipMedia = {
 	},
 	'rz-1-a-wing-interceptor' : {
 		embed: null,
-		schematic: 'https://vignette1.wikia.nocookie.net/starwars/images/4/4d/Awing_egvv.jpg/revision/latest?cb=20080929233021',
+		schematic: 'https://www.the-blueprints.com/blueprints-depot/sciencefiction/star-wars-rebel/a-wing.GIF',
 		description: "The RZ-1 A-wing interceptor was a wedge-shaped starfighter manufactured by Kuat Systems Engineering, which took design inspiration from the Republic starfighters of the Clone Wars. They were used by the early rebellion against the Galactic Empire and the subsequent Rebel Alliance, seeing action during the Age of the Empire and the Galactic Civil War. It was still in use thirty years later during the conflict between the Resistance and the First Order."
 	},
 	'b-wing-heavy-assault-starfighter' : {

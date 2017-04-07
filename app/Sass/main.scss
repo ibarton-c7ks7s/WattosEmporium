@@ -1,65 +1,27 @@
 //reset
 @import "~normalize-css/normalize.css";
 
+//shared
+@import "_shared";
+@import "_tables";
+
 //fonts
-@import '_fonts.scss';
+@import '_fonts';
 
 //grid
-@import "~flexboxgrid-sass/flexboxgrid.scss";
+@import "~flexboxgrid-sass/flexboxgrid";
 
 //animations
 @import "~animate.css/animate.min.css";
-@import "_tables.scss";
+
+//modules
+@import "_ship-detail";
+@import "_ship-listing";
+
 
 /**
-* MAIN
+* Misc Shared
 */
-
-$yellow: #ccb361;
-$tan: #bbae95;
-$dark-tan: #b09a72;
-$blue: #50b5ed;
-$dark-blue: #2a5871;
-$mid-blue: #40728e;
-$light-blue: #87c4e5;
-$dark-green: #147460;
-$green: #26b497;
-$light-green: #42e29a;
-
-* {
-   transform: translateZ(0);
-}
-
-html {
-	font-size: 16px;
-	height: 100%;
-}
-
-body {
-	background: #020202;
-	color: #8f8f8f;
-	@include n-sans;
-}
-
-h1,h2,h3,h4,h5,h6 {
-	@include j-slab-bold;
-	color: #fff;
-}
-
-a {
-	color: $yellow;
-	text-decoration: none;
-    outline: none;
-
-    &:hover {
-		text-decoration: underline;
-	}
-}
-
-p {
-	margin: 0;
-}
-
 .content {
 	margin-bottom: 2em;
 	min-height: 100vh;
@@ -73,9 +35,6 @@ p {
 	}
 }
 
-/**
-* BUTTONS
-*/
 .button {
 	background: $green;
 	display: inline-block;
@@ -84,10 +43,13 @@ p {
 	text-transform: uppercase;
 	border-radius: 4px;
 	transition: background .2s;
+	min-width: 11.25em;
+	text-align: center;
+	@include n-sans-bold;
 
 	&:hover {
-		text-decoration: none;
 		background: $light-green;
+		text-decoration: none;
 	}
 }
 
@@ -96,15 +58,15 @@ p {
 */
 .site-header {
 	background: rgba($yellow, .5);
-    border-bottom: 2px solid $yellow;
-    padding: 1em;
+	border-bottom: 2px solid $yellow;
+	padding: 1em;
 
-    &--title {
-    	text-indent: -9999px;
-    	background: url('../assets/images/logo.png') center center no-repeat;
-    	height: 75px;
-    	background-size: contain;
-    }
+	&--title {
+		text-indent: -9999px;
+		background: url('../assets/images/logo.png') center center no-repeat;
+		height: 75px;
+		background-size: contain;
+	}
 }
 
 /**
@@ -112,105 +74,35 @@ p {
 */
 .site-footer {
 	background: rgba($yellow, .5);
-    border-top: 2px solid $yellow;
-    padding: 1em 0 .5em;
+	border-top: 2px solid $yellow;
+	padding: 1em 0 .5em;
 
-    .copyright {
-    	text-align: center;
-    	font-size: .8em;
-    }
-
-    .watto {
-
-    	&--profile {
-    		border-radius: 50%;
-		    overflow: hidden;
-		    width: 140px;
-    	}
-
-		&--quote {
-
-		}
-    }
-}
-
-
-/**
-* SHIP PREVIEW
-*/
-.ship-preview {
-	&>* {
-		display: inline-block;
-		margin: 0;
-	}
-
-	&--img {
-		max-width: 100%;
-		transition: transform .2s;
-
-		&:hover {
-			transform: rotate(-3deg);
-		}
-	}
-
-	&--name {
-		font-size: 1.1em;
-		margin-bottom: .25em;
-		@include j-slab;
-	}
-
-	&--manufacturer {
-		display: block;
+	.copyright {
+		text-align: center;
 		font-size: .8em;
-		margin-bottom: .5em;
-		color: $mid-blue;
+		color: #fff;
 	}
 
-	&--price {
-		color: $blue;
-		margin-bottom: .25em;
-	}
+	.watto {
 
-	&--no-price {
-		color: $light-blue;
-	    background: $dark-blue;
-	    padding: .25em;
-	    margin-bottom: .25em;
-	}
-}
+		&--profile {
+			border-radius: 50%;
+			overflow: hidden;
+			width: 140px;
+		}
 
-/**
-* Ship Detail
-*/
-.spec-table {
-	@extend %table;
+		&--quote-wrap {
+			display: flex;
+		}
 
-	td,
-	th {
-		border-color: $tan;
-	}
-
-	tr {
-		background: rgba($tan, .3);
-
-		&:nth-child(2n+1) {
-			background: rgba($tan, .4);
+		blockquote {
+			align-self: center;
+			font-size: 1.5em;
+			color: #fff;
+			margin-left: 1em;
+			@include j-slab;
 		}
 	}
 }
 
-.sketchfab-embed-wrapper {
-	position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
 
-    iframe {
-    	position: absolute;
-	    top:0;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
-    }
-}

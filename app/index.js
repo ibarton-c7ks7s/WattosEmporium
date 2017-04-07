@@ -11,7 +11,7 @@ import ShipViewPage from './Components/Views/ShipViewPage.jsx';
 import './Sass/main.scss';
 
 // @todo include font-awesome icons
-// @todo should extract css
+// @todo should extract css to separate files
 // @todo get autoprefixer
 
 class App extends React.Component {

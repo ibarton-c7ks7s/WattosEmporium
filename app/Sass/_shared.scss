@@ -1,0 +1,44 @@
+$yellow: #ccb361;
+$tan: #bbae95;
+$dark-tan: #b09a72;
+$blue: #50b5ed;
+$dark-blue: #2a5871;
+$mid-blue: #40728e;
+$light-blue: #87c4e5;
+$dark-green: #147460;
+$green: #26b497;
+$light-green: #42e29a;
+
+* {
+   -webkit-transform: translateZ(0);
+}
+
+html {
+	font-size: 16px;
+	height: 100%;
+}
+
+body {
+	background: #020202;
+	color: #8f8f8f;
+	@include n-sans;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	@include j-slab-bold;
+	color: #fff;
+}
+
+a {
+	color: $yellow;
+	text-decoration: none;
+    outline: none;
+
+    &:hover {
+		text-decoration: underline;
+	}
+}
+
+p {
+	margin: 0;
+}

@@ -25,6 +25,28 @@ function ModelEmbed(props) {
 }
 
 /**
+* Renders schematic row in the Spec table 
+*
+* @param {Object} props
+* @return {JSX}
+*/
+function SchematicRow(props) {
+	if(!props.schematic) {
+		return null
+	}
+
+	return (
+		<tr>
+			<td className="schematic" colSpan="2">
+				<a href={props.schematic} target="_blank">
+					View Schematics
+				</a>
+			</td>
+		</tr>
+	)
+}
+
+/**
 * Tech Specs Table
 *
 * @param {Object} props
@@ -40,6 +62,8 @@ function SpecsTable(props) {
 	return (
 		<table className="spec-table">
 			<tbody>
+				<SchematicRow schematic={props.data.media.schematic} />
+				
 				<tr>
 					<th>class</th>
 					<td>{props.data.class}</td>
@@ -88,29 +112,37 @@ class ShipListingPage extends React.Component {
 
 		return (
 			<section className="container-fluid">
-				<div className="row">&lt;&nbsp;<Link className="breadcrumb" to="/">Back to listings</Link></div>
+				<span>
+					&lt;&nbsp;<Link className="breadcrumb" to="/">Back to listings</Link>
+				</span>
 				<section className="row">
-					<div className="col-xs-12 col-sm-7">
+					<div className="col-xs-12 col-sm-7 animated fadeIn">
 						<header>
-							<h2>{this.state.ship.name}</h2>
-							<p>{this.state.ship.manufacturer}</p>
+							<h1 className="ship-title">{this.state.ship.name}</h1>
+							<p className="ship-manufacturer">{this.state.ship.manufacturer}</p>
 						</header>
 						<ModelEmbed media={media}/>
 						<div className="ship-description">{media.description}</div>
 					</div>
-					<div className="col-xs-12 col-sm-5">
-						<div><a href={media.schematic} target="_blank">Ship Schematics</a></div>
-						<SpecsTable data={this.state.ship} />
-
+					<div className="col-xs-12 col-sm-5 animated slideInRight">
 						<div className="purchase">
-							<p>{this.state.ship.price}</p>
+							<p className="purchase--price">{this.state.ship.price}</p>
 							<a className="button" href="#">Buy</a> 
 						</div>
+						<SpecsTable data={this.state.ship} />
 					</div>
 				</section>
 			</section>
 		);
 	}
 }
-
+/*<tr>
+					<th>Schematics</th>
+					<td>
+						<a href={props.data.media.schematic} target="_blank">
+							<img src={props.data.media.schematic} />
+						</a>
+					</td>
+				</tr>*/
+/*<div><a href={media.schematic} target="_blank">Ship Schematics</a></div>*/
 export default ShipListingPage

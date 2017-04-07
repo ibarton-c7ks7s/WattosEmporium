@@ -19,31 +19,42 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.(jpg|jpeg|png|gif)$/,
-			loader: 'file-loader?name=images/[name].[ext]'
-        },{
-        	test: /\.(woff|woff2)$/,
-        	loader: 'url-loader',
-        	options: {
-        		name: './fonts/[name].[ext]'
-        	}
-        },{
-            test: /\.scss$/,
-            use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            }, {
-                loader: "css-loader" // translates CSS into CommonJS
-            },{
-                loader: "sass-loader", // compiles Sass to CSS
-                options: {
-                	sourceMap: true,
+			loader: 'file-loader',
+			options: {
+				name: './images/[name].[ext]'
+			}
+		},{
+			test: /\.(woff|woff2)$/,
+			loader: 'url-loader',
+			options: {
+				name: './fonts/[name].[ext]'
+			}
+		},{
+			test: /\.scss$/,
+			use: [{
+				loader: "style-loader"
+			}, {
+				loader: "css-loader"
+			},{
+				loader: "sass-loader",
+				options: {
+					sourceMap: true,
 					includePaths: [
 						path.resolve(__dirname, 'node_modules/normalize-css/normalize.css'),
 						path.resolve(__dirname, 'node_modules/flexboxgrid-sass/flexboxgrid.scss'),
 						path.resolve(__dirname, 'node_modules/animate.css/animate.min.css')
 					]
 				}
-            }]
-        },{
+			},{
+				loader: 'sass-resources-loader',
+				options: {
+					resources: [
+						'./app/Sass/_fonts.scss',
+						'./app/Sass/_shared.scss'
+					]
+				  },
+				}]
+		},{
 			test: /\.js$/,
 			use: [{ loader: 'babel-loader' }],
 			exclude: /node_modules/
@@ -51,7 +62,7 @@ module.exports = {
 			test: /\.jsx$/,
 			use: [{ loader: 'babel-loader' }],
 			exclude: /node_modules/
-        }]
+		}]
 	},
 	plugins: [HtmlWebpackPluginConfig]
 }

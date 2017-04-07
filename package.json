@@ -26,6 +26,7 @@
     "react-router-dom": "^4.0.0",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.3",
+    "sass-resources-loader": "1.2.0-beta.1",
     "style-loader": "^0.16.1",
     "unique-id-generator": "^1.0.1",
     "url-loader": "^0.5.8",
